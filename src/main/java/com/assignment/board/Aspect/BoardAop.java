@@ -16,16 +16,28 @@ import org.springframework.transaction.support.DefaultTransactionDefinition;
 public class BoardAop {
     private final PlatformTransactionManager transactionManager;
 
-    @Pointcut("execution(* com.assignment.board.Board.controller.BoardController.insert*(..))")
+    /**
+     * LINE :: insert(등록) 메소드 가져오기
+     */
+    @Pointcut("execution(* com.assignment.board.Board.service.BoardService.insert*(..))")
     public void getInsert() {
 
     }
 
-    @Pointcut("execution(* com.assignment.board.Board.controller.BoardController.select*(..))")
+    /**
+     * LINE :: select(조회) 메소드 가져오기
+     */
+    @Pointcut("execution(* com.assignment.board.Board.service.BoardService.select*(..))")
     public void getSelect() {
 
     }
 
+    /**
+     * FUNCTION :: Exception 발생 시 트랜잭션 롤백 처리
+     * @param joinPoint
+     * @return
+     * @throws Throwable
+     */
     @Around("getInsert() || getSelect()")
     public Object TransactionHandle(ProceedingJoinPoint joinPoint) throws Throwable {
         TransactionStatus transactionStatus = transactionManager.getTransaction(new DefaultTransactionDefinition());

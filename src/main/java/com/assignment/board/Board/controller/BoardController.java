@@ -15,18 +15,32 @@ import java.util.List;
 public class BoardController {
     private final BoardService boardService;
 
+    /**
+     * FUNCTION :: 게시판 등록
+     * @param boardDTO
+     * @return
+     */
     @GetMapping("/insertBoard")
     @ResponseStatus(value = HttpStatus.OK)
     public String insertBoard(BoardDTO boardDTO) {
         return boardService.insertBoard(boardDTO);
     }
 
+    /**
+     * FUNCTION :: 게시판 전체 목록 조회
+     * @return
+     */
     @GetMapping("/selectBoardList")
     @ResponseStatus(value = HttpStatus.OK)
     public List<BoardDTO> selectBoardList() {
         return boardService.selectBoardList();
     }
 
+    /**
+     * FUNCTION :: 게시판 상세 조회
+     * @param boardDTO
+     * @return
+     */
     @GetMapping("/selectBoardDetail")
     @ResponseStatus(value = HttpStatus.OK)
     public BoardDTO selectBoardDetail(BoardDTO boardDTO) {

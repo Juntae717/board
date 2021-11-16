@@ -1,11 +1,13 @@
 package com.assignment.board.database.mybatis.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Date;
 
 @Getter @Setter
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class BoardDTO {
     private int idx; // 게시판 고유식별자
     private String boardTitle; // 게시판 제목
