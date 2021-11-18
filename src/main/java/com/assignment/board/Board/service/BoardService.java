@@ -6,7 +6,7 @@ import javax.transaction.RollbackException;
 import javax.transaction.Transactional;
 import java.util.List;
 
-@Transactional(rollbackOn = RollbackException.class)
+@Transactional
 public interface BoardService {
 
     String insertBoard(BoardDTO boardDTO);
