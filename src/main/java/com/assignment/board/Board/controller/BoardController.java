@@ -21,7 +21,7 @@ public class BoardController {
      * @return
      */
     @GetMapping("/insertBoard")
-    @ResponseStatus(value = HttpStatus.OK)
+    @ResponseStatus(value = HttpStatus.CREATED)
     public String insertBoard(BoardDTO boardDTO) {
         return boardService.insertBoard(boardDTO);
     }

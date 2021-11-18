@@ -44,7 +44,7 @@ public class DatabaseConfig extends HikariConfig {
     }
 
     /**
-     * FUNCTION :: Set Resource Path ( Mapper.xml, DTO ) & Alias set CamelCase
+     * FUNCTION :: Set Resource Path ( Mapper.xml, DTO ) & Alias set DTO
      * @param sqlSessionFactoryBean
      * @param hikariDataSource
      * @throws Exception
