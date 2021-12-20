@@ -2,7 +2,6 @@ package com.assignment.board.Board.service;
 
 import com.assignment.board.database.mybatis.dto.BoardDTO;
 
-import javax.transaction.RollbackException;
 import javax.transaction.Transactional;
 import java.util.List;
 

@@ -44,5 +44,4 @@ public class BoardAop {
             throw runtimeException;
         }
     }
-
 }
